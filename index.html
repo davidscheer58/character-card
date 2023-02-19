@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+  </style>
+  <title>character-card</title>
+</head>
+
+<body>
+  <div class="buttons">
+    <button class="copy" @click=${this.copy}>Duplicate</button>
+    <button class="changeBackground" @click=${this.changeBG}>
+      Change Background
+    </button>
+    <button class="changeTitle" @click=${this.changeTitle}>
+      Change Title
+    </button>
+    <button id="delete" @click=${this.delete}>Delete Last Instance</button>
+  </div>
+  <character-card>
+  
+    <ul>
+     
+    </ul>
+  </character-card>
+
+  <script type="module" src="./src/character-card.js"></script>
+  
+  
+  <script>
+    copy(event) {
+    const clone = this.shadowRoot.querySelector('.card').cloneNode(true);
+    this.shadowRoot.appendChild(clone);
+    this.cardCount++;
+  };
+
+  delete(event) {
+    if (this.cardCount > 1) {
+      this.shadowRoot.querySelector('.card:last-child').remove();
+      this.cardCount--;
+    }
+  };
+
+  changeTitle(event) {
+    if (
+      this.shadowRoot.querySelector('.header').innerHTML === 'Spongebob'
+    ) {
+      this.shadowRoot.querySelector('.header').innerHTML = 'Spoinkboink';
+    } else {
+      this.shadowRoot.querySelector('.header').innerHTML = 'Spongebob';
+    }
+  };
+
+  changeBG(event) {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    this.shadowRoot.querySelector('.card').style.backgroundColor = color;
+  };
+
+  details(event) {
+    if (this.shadowRoot.querySelector('.paragraph').style.display === 'none') {
+      this.shadowRoot.querySelector('.paragraph').style.display = 'block';
+    } else {
+      this.shadowRoot.querySelector('.paragraph').style.display = 'none';
+    }
+  };
+  
+
+  </script>
+
+  
+</body>
+
+</html>
