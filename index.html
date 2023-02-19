@@ -47,14 +47,14 @@
     const clone = this.shadowRoot.querySelector('.card').cloneNode(true);
     this.shadowRoot.appendChild(clone);
     this.cardCount++;
-  };
+  }
 
   delete(event) {
     if (this.cardCount > 1) {
       this.shadowRoot.querySelector('.card:last-child').remove();
       this.cardCount--;
     }
-  };
+  }
 
   changeTitle(event) {
     if (
@@ -64,7 +64,7 @@
     } else {
       this.shadowRoot.querySelector('.header').innerHTML = 'Spongebob';
     }
-  };
+  }
 
   changeBG(event) {
     var letters = '0123456789ABCDEF';
@@ -73,7 +73,7 @@
       color += letters[Math.floor(Math.random() * 16)];
     }
     this.shadowRoot.querySelector('.card').style.backgroundColor = color;
-  };
+  }
 
   details(event) {
     if (this.shadowRoot.querySelector('.paragraph').style.display === 'none') {
@@ -81,9 +81,7 @@
     } else {
       this.shadowRoot.querySelector('.paragraph').style.display = 'none';
     }
-  };
-  
-
+  }
   </script>
 
   
