@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "lit": "^2.0.2"
-     "@lrnwebcomponents"/ meme-maker: "^4.1.0" 
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
@@ -39,9 +38,4 @@
     "rollup-plugin-workbox": "^6.2.0"
   },
   "customElements": "custom-elements.json"
-}
-{
-  "dependencies": {
-    "@lrnwebcomponents/meme-maker": "^4.1.0"
-  }
 }

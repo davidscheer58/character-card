@@ -1,15 +1,38 @@
 import { LitElement, html, css } from 'lit';
+import '@lrnwebcomponents/meme-maker'; 
+
 
 const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
 export class CharacterCard extends LitElement{
   static properties = {
-    version: {}, 
+    characterName: {
+      type: String,
+      reflect: true
+    },
+    cardDetails:{
+      type: String, 
+
+    },
+    topText:{
+      type: String,
+      reflect: true
+    },
+    bottomText:{
+      type: String, 
+      reflect:true
+    },
+    subtitle: {
+      type: String,
+      reflect: true, 
+    },
+    img: {
+      type: String, 
+      reflect: true, 
+    }
+   
   };
-  constructor(){
-    super(); 
-    this.version= "Starting" 
-  }
+
 
   static get styles() {
     return css`
@@ -42,13 +65,7 @@ export class CharacterCard extends LitElement{
     
     }
     
-    @media screen and (max-width: 500px){
-      .card {
-        width: 100%;
-        border: 5px solid red;
-        margin: 20px;
-        padding: 20px;
-      }
+    
       
      .btn {
         margin: 1px 10px 50px; 
@@ -56,51 +73,67 @@ export class CharacterCard extends LitElement{
         text-transform: uppercase; 
         padding: 8px 8px; 
        }
-    
+       .detailButton{
+        margin: 1px; 
+        position: center; 
+       }
+       button:hover, 
+       buttons:focus{
+        background-color:blue;
+       }
+
+       meme-maker{
+        border-radius: 10px; 
+        border:solid white; 
+        width: 400px; 
+
+       }
+
+       @media (min-width: 500px) and (max-width: 800px){
+        .detailButton{
+          display:none; 
+        }
+       }
+       @media (max-width: 500px){
+      .card {
+       transform: scale(0.8); 
+      }
       .card_paragraph {
         visibility: hidden;
       }
     }
     
-    `
-    
-    
-    
-    
-    
-    
-      
-    
-      
-     
-      
-    
-    
-    
-      
+    `; 
+
+   
   }
     
+constructor() {
+  super(); 
+  this.characterName = "Spongebob"; 
+  this.characterDetails = "Spoinkboink owns the world."
+  this.img= "https://cdn.drawception.com/drawings/QrLtCOH6rL.png"
+}
+
 
   render() {
     return html`
     
   <div class="card">
-    <h2 class="header">Spongebob</h2>
-    <img class="image" alt="Spoinkboink"
-    src=https://cdn.drawception.com/drawings/QrLtCOH6rL.png>
+    <h2 class="header">Spongebob </h2>
+    ${this.characterName}
+  </h1>
+  <slot name= "subtitle"></slot>
+   <img src= https://cdn.drawception.com/drawings/QrLtCOH6rL.png>
+   
+
+
     <p class="paragraph">
-      This image depicts the one the great Spongebob. He is the greatest of them all.
+      ${this.characterDetails}
    </p>
-   <slot> 
-      
-    </slot>
-    <button class="details" @click=${this.details}>Details</button>
+   <slot name = "img"></slot>
   </div>
-  
-
-    `;
-
-    
+    `; 
   }
 
 }
