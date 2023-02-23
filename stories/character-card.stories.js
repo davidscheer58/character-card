@@ -12,7 +12,7 @@ export default {
 function Template({ title, backgroundColor }) {
   return html`
     <character-card
-      style="--character-card-background-color: ${backgroundColor || 'white'}"
+      style="--character-card2-background-color: ${backgroundColor || 'white'}"
       .title=${title}
     >
     </character-card>
