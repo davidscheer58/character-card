@@ -21,7 +21,7 @@
     border-width: 10px;
   } 
   </style>
-  <title>character-card</title>
+  <title>character-card3</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
   
       
 <div id = "app">
-  <character-card>
+  <character-card3>
     
     <div slot="subtitle"> 
       <h2>Spoinkboink</h2> 
@@ -53,7 +53,7 @@
       </div>
 
 
-      <character-card>
+      <character-card3>
       </div>
 
   <script type="module" src="./src/character-card3.js"></script>
@@ -62,13 +62,13 @@
 
 document.querySelector('.copy').addEventListener("click", function(e){   
   
-  const cloneCard = document.querySelector('character-card').cloneNode();
+  const cloneCard = document.querySelector('character-card3').cloneNode();
   document.querySelector('#app').appendChild(cloneCard); 
   
 });
 
 document.querySelector(".deleteButton").addEventListener("click", function(e){ 
-  if (document.querySelector('#app :last-child') != document.querySelector('character-card')) {
+  if (document.querySelector('#app :last-child') != document.querySelector('character-card3')) {
   document.querySelector('#app :last-child').remove();
 } else {
   alert('One cannot fully erase spoinkboink without doodlebob ME HOYYY MINOYY');
@@ -91,7 +91,7 @@ document.querySelector('.detailButton').addEventListener("mouseleave", function 
 });
 
 document.querySelector('.detailButton').addEventListener("click", function(e){
-  const paragraph = document.querySelector('character-card').shadowRoot.querySelector('.text'); 
+  const paragraph = document.querySelector('character-card3').shadowRoot.querySelector('.text'); 
   if (paragraph.style.display === "none"){
     paragraph.style.display = "block"
   } else {
@@ -111,13 +111,13 @@ function getRandomColor() {
 }
 
 document.querySelector(".toggleBackGroundColor").addEventListener("click", function(e){   
-  document.querySelector('character-card').shadowRoot.querySelector('#app').style.backgroundColor = getRandomColor(); 
+  document.querySelector('character-card3').shadowRoot.querySelector('#app').style.backgroundColor = getRandomColor(); 
 });
 
 document.querySelector(".changeTitle").addEventListener("click", function(e){  
   let characterName = prompt("What you think you are more creative at making a title then me?  ");
   if (characterName) {
-    document.querySelector('character-card').characterName = characterName;
+    document.querySelector('character-card3').characterName = characterName;
   }
 });
 

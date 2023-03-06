@@ -123,4 +123,4 @@ buttons:focus{
   }
 }
 
-customElements.define('character-card', CharacterCard);
+customElements.define('character-card3', CharacterCard);
