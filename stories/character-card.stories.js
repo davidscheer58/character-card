@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import '../src/character-card.js';
+import '../src/character-card3';
 
 export default {
   title: 'CharacterCard',

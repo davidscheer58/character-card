@@ -91,7 +91,7 @@ document.querySelector('.detailButton').addEventListener("mouseleave", function 
 });
 
 document.querySelector('.detailButton').addEventListener("click", function(e){
-  const paragraph = document.querySelector('character-cardcd').shadowRoot.querySelector('.text'); 
+  const paragraph = document.querySelector('character-card').shadowRoot.querySelector('.text'); 
   if (paragraph.style.display === "none"){
     paragraph.style.display = "block"
   } else {
@@ -111,7 +111,7 @@ function getRandomColor() {
 }
 
 document.querySelector(".toggleBackGroundColor").addEventListener("click", function(e){   
-  document.querySelector('character-card').shadowRoot.querySelector('.all').style.backgroundColor = getRandomColor(); 
+  document.querySelector('character-card').shadowRoot.querySelector('#app').style.backgroundColor = getRandomColor(); 
 });
 
 document.querySelector(".changeTitle").addEventListener("click", function(e){  
