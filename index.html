@@ -56,7 +56,7 @@
       <character-card>
       </div>
 
-  <script type="module" src="./src/character-card.js"></script>
+  <script type="module" src="./src/character-card3.js"></script>
 
 <script>
 
@@ -91,7 +91,7 @@ document.querySelector('.detailButton').addEventListener("mouseleave", function 
 });
 
 document.querySelector('.detailButton').addEventListener("click", function(e){
-  const paragraph = document.querySelector('character-card').shadowRoot.querySelector('.text'); 
+  const paragraph = document.querySelector('character-cardcd').shadowRoot.querySelector('.text'); 
   if (paragraph.style.display === "none"){
     paragraph.style.display = "block"
   } else {
@@ -101,6 +101,7 @@ document.querySelector('.detailButton').addEventListener("click", function(e){
 });
 
 function getRandomColor() {
+  
   var letters = '0123456789ABCDEF';
   var color = '#';
   for (var i = 0; i < 6; i++) {
